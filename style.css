@@ -1,5 +1,6 @@
 body{
     background-image: linear-gradient(#B068E9, #6463E7 );
+    min-height: 100vh;
     background-repeat: no-repeat;
     font-family: "Kumbh Sans", sans-serif;
     font-size: 14px;
@@ -9,39 +10,45 @@ body{
     display: flex;
     width: 920px;
     height: 509px;
+    min-height: 509px;
     margin: 100px auto;
     border-radius: 15px;
     background-color: #FFF;
-    overflow: hidden;
+
 }
 
 
 /* Illustratives Images Section */
 .container__illustrative-images {
     width: 472px;
-    height: 100%;
     background-image: url(./images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
     background-position: -570px -300px; ;
 }
 
-.illustrative__image {
+.illustrative__image--desktop {
     width: 472px;
     height: 359px;
     margin: 70px 0 0 -84px;
 }
 
+.illustrative__image--mobile {
+    display : none
+}
+
 .box {
-    position: absolute;
-    top: 35.3%;
-    left: 6.7%; 
+    /* position: absolute;
+    top: 305px;
+    left: 80px;  */
+    transform: translate(-110px, -220px);
+    overflow: visible;
+    z-index: 20;
 }
 
 /* FAQ Section */
 .faq {
     margin-top: 40px;
     width: 350px;
-    height: 35px;
 }
 
 .faq h1 {
@@ -89,6 +96,9 @@ body{
     cursor: pointer;
     margin-left: auto;
     margin-bottom: -13px;
+    background-image: url('./images/icon-arrow-down.svg');
+    background-repeat: no-repeat;
+    transition: all .2s;
 }
 
 .answer {
@@ -108,7 +118,75 @@ body{
     display: none;
 }
 
+.rotate {
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+
 @keyframes fadeInOut {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+/* Media Queries */
+
+@media only screen and (max-width : 375px) {
+    .container {
+        width: 327px;
+        min-height: 535px;
+        flex-direction: column;
+        justify-content: stretch;
+        margin: 150px auto;
+        overflow: visible;
+    }
+
+    .box {
+        display: none;
+    }
+
+    .container__illustrative-images {
+        width: 472px;
+        background-image: url(./images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: 50px 0px; ;
+    }
+
+    .illustrative__image--desktop {
+        display: none;
+    }
+    
+    .illustrative__image--mobile {
+        display: block;
+        width: 237px;
+        height: 180px;
+        transform: translate(50px, -110px);
+    }
+
+    /* FAQ responsive design */
+    .faq {
+        width: 280px;
+        align-self: center;
+        margin-top: -80px;
+    }
+
+    .faq h1 {
+        text-align: center;
+    }
+
+    .question {
+        width: 233px;
+        font-size: 13px;
+    }
+
+    .answer {
+        font-size: 12px;
+    }
+    
+    .arrow {
+
+
+    }
+    
+    
 }

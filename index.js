@@ -7,16 +7,9 @@ let idQuestion = 0;
 //Selection Question's ID
 arrow.forEach((el, id) => {
     el.addEventListener("click", () => {
-        
                 answer[id].classList.toggle("hidden"); 
                 question[id].classList.toggle("active");
-
+                arrow[id].classList.toggle("rotate");
         idQuestion = id
     })
 })
-
-
-// Function for displaying Answer base of ID
-function ShowAnswerById (id) {
-    
-}
