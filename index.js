@@ -1,15 +1,19 @@
-const [...question] = document.getElementsByClassName("question");
-const [...arrow] = document.getElementsByClassName("arrow");
-const [...answer] = document.getElementsByClassName("answer");
+const [...questions] = document.getElementsByClassName("question");
+const [...arrows] = document.getElementsByClassName("arrow");
+const [...answers] = document.getElementsByClassName("answer");
 
-let idQuestion = 0;
-
+let flag
 //Selection Question's ID
-arrow.forEach((el, id) => {
-    el.addEventListener("click", () => {
-                answer[id].classList.toggle("hidden"); 
-                question[id].classList.toggle("active");
-                arrow[id].classList.toggle("rotate");
-        idQuestion = id
-    })
-})
+arrows.forEach((arrow, id) => {
+    arrow.addEventListener("click", () => {   
+             answers.forEach(answer => { 
+                answer.classList.add("hidden") 
+                questions.forEach(question => {
+                    question.classList.remove("active");
+                })
+            });
+                    arrow.classList.toggle("rotate");
+                    answers[id].classList.toggle("hidden"); 
+                    questions[id].classList.toggle("active");
+                })  
+});

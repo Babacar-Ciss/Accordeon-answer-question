@@ -14,7 +14,7 @@ body{
     margin: 100px auto;
     border-radius: 15px;
     background-color: #FFF;
-
+    overflow: hidden;
 }
 
 
@@ -24,6 +24,7 @@ body{
     background-image: url(./images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
     background-position: -570px -300px; ;
+    overflow: hidden;
 }
 
 .illustrative__image--desktop {
@@ -37,12 +38,9 @@ body{
 }
 
 .box {
-    /* position: absolute;
-    top: 305px;
-    left: 80px;  */
-    transform: translate(-110px, -220px);
-    overflow: visible;
-    z-index: 20;
+    position: absolute;
+    top: calc(740px - 50%);
+    left: 78px;
 }
 
 /* FAQ Section */
@@ -63,6 +61,7 @@ body{
     justify-content: space-between;
     margin-top: -13px;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .line-bottom {
@@ -119,8 +118,7 @@ body{
 }
 
 .rotate {
-    transform: rotate(180deg);
-    transform-origin: center;
+    transform : rotate(180deg);
 }
 
 
@@ -182,11 +180,4 @@ body{
     .answer {
         font-size: 12px;
     }
-    
-    .arrow {
-
-
-    }
-    
-    
 }
